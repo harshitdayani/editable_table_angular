@@ -1,6 +1,21 @@
-# Project 
+# What does this project serve?
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
+This project is created with the view to add, edit, and delete rows in the table. Below screen shot gives an idea about that.
+
+## How to use this project?
+
+1. Clone it.
+2. Run the project by using following command `npm install`.
+3. Run on localhost by using following command `ng serve`. 
+
+## Project Screens
+
+Screenshot 1. Initial application.
+![alt text](https://github.com/harshitdayani/bank_ledger_app_angular/blob/main/src/assets/1.png)
+
+## License
+
+[GNU GPLv3](https://choosealicense.com/licenses/gpl-3.0/)
 
 ## Development server
 
