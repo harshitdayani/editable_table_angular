@@ -1,0 +1,83 @@
+header {
+    background-color: darkolivegreen;
+    color: #fff;
+    overflow: auto;
+    position: sticky;
+    top:0;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+  }
+  
+  .table {
+    padding: 20px;
+    width: 100%;
+  }
+  
+  .table tbody tr td,
+  .table thead th,
+  .table thead {
+    border-left: 1px solid #dee2e6;
+    border-right: 1px solid #dee2e6;
+  }
+
+  table thead{
+    background: lightgrey;
+  }
+  
+  .action-container {
+    display: flex;
+    padding: 20px;
+  }
+  
+  mat-icon {
+    cursor: pointer;
+  }
+  
+  .output {
+    padding: 20px;
+  }
+  
+  .delete_icon {
+    color: red  ;
+    margin-left: 20px;
+  }
+  
+  .done_icon {
+    color: green;
+  }
+  
+  .edit_icon {
+    color: yellow;
+  }
+  
+  span.ui-column-resizer {
+    width: 100%;
+    height: 100%;
+    cursor: col-resize;
+    padding: 30px;
+  
+  }
+  
+  form {
+    margin: 0px 30px;
+  }
+  
+  div.output span {
+    font-weight: bold;
+  }
+  
+  .space_between{
+    margin-left: 20px;
+  }
+  
+
+  th{
+    padding: 15px;
+
+  }
+
+  tr td{
+    padding: 15px;
+  }

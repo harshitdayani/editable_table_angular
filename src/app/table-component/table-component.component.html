@@ -1,0 +1,117 @@
+<header>
+    <div>
+        <h1>Dynamically add and remove row from table.</h1>
+    </div>
+
+</header>
+
+<form [formGroup]="form_uTable">
+    <table class="table table-border">
+        <thead class="text-nowrap">
+            <th>First Name </th>
+            <th>Last Name </th>
+            <th>Email </th>
+            <th>Phone </th>
+            <th>Action (Delelte / Edit) </th>
+        </thead>
+        <tbody>
+
+            <!-- Data loaded from users_data.json file -->
+            <tr *ngFor="let user of data;">
+
+                <td>{{ user.f_name }}</td>
+
+                <td>{{ user.l_name }}</td>
+
+                <td>{{ user.e_mail }}</td>
+
+                <td>{{ user.phone }}</td>
+
+                <td>
+                    <mat-icon class="clear">clear</mat-icon>
+                </td>
+
+            </tr>
+
+            <ng-container formArrayName="tableRows" *ngFor="let group of getFormControls.controls ; let i=index">
+
+                <!-- if the input are editable then this input row will be visible -->
+                <tr *ngIf="group.get('isEditable').value" [formGroupName]="i">
+
+                    <td>
+                        <mat-form-field>
+                            <input matInput type="text" formControlName="f_name">
+                        </mat-form-field>
+                    </td>
+
+                    <td>
+                        <mat-form-field>
+                            <input matInput type="text" formControlName="l_name">
+                        </mat-form-field>
+                    </td>
+
+
+                    <td>
+                        <mat-form-field>
+                            <input matInput type="tetx" formControlName="email">
+                        </mat-form-field>
+                    </td>
+
+
+                    <td>
+                        <mat-form-field>
+                            <input matInput type="text" formControlName="phone">
+                        </mat-form-field>
+                    </td>
+
+                    <td>
+                        <mat-icon class="done_icon" (click)="saveDetails(group)">done_all</mat-icon>
+                        <mat-icon class="delete_icon" (click)="deleteRow(i)">delete_sweep</mat-icon>
+                    </td>
+
+                </tr>
+
+                <!-- and if inputs are not in the editable state (isEditable == false) then this will show -->
+                <tr *ngIf="!group.get('isEditable').value">
+                    <td>
+                        {{group.get('f_name').value}}
+                    </td>
+                    <td>
+                        {{group.get('l_name').value}}
+                    </td>
+                    <td>
+                        {{group.get('email').value}}
+                    </td>
+
+                    <td>
+                        {{group.get('phone').value}}
+                    </td>
+
+                    <td>
+                        <mat-icon class="edit_icon" (click)="editRow(group)">edit</mat-icon>
+                    </td>
+
+                </tr>
+
+            </ng-container>
+
+        </tbody>
+    </table>
+
+    <div class="action-container">
+        <button mat-raised-button type="submit" (click)="addRow()">Add row</button>
+        <button mat-raised-button [disabled]="form_uTable.invalid" type="submit" class="space_between"
+            (click)="submitForm()">Submit</button>
+    </div>
+
+</form>
+
+
+<div class="output">
+    <span>Data From JSON File: </span>
+    <p> {{ data | json }} </p>
+    <span>Form validation status: </span>
+    <p> {{form_uTable.valid}} </p>
+    <span>Form Data: </span>
+    <p> {{form_uTable.value | json}} </p>
+</div>
