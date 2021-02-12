@@ -11,7 +11,7 @@ This project is created with the view to add, edit, and delete rows in the table
 ## Project Screens
 
 Screenshot 1. Initial application.
-![alt text](https://github.com/harshitdayani/bank_ledger_app_angular/blob/main/src/assets/1.png)
+![alt text](https://github.com/harshitdayani/editable_table_angular/blob/main/src/assets/1.png)
 
 ## License
 
